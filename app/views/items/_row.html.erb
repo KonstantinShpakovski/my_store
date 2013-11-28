@@ -1,0 +1,14 @@
+<tr>
+  <td><%= row.id  %></td>
+  <td><%= link_to row.name, item_path(row)  %></td>
+  <td><%= row.description  %></td>
+  <td><%= row.price  %> руб.</td>
+  <td><%= row.weight  %> кг.</td>
+  <td>
+    <%= link_to "Edit", controller: "items", action: "edit", id: row.id %>
+    <%= link_to "Delete", item_path(row), method: :delete, data: {confirm: "Are you sure?"} %>
+    <%= button_to "Edit", edit_item_path(row), method: :get %>
+    <%= button_to "Delete", row, method: :delete, data: {confirm: "Are you sure?"} %>
+  </td>
+  <td>Рейтинг: <%=	 row.votes_count %>, <%=	 link_to "+", upvote_item_path(row) %></td>
+</tr>
