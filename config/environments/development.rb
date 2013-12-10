@@ -15,6 +15,7 @@ MyStore::Application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :sendmail
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -28,5 +29,8 @@ MyStore::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  I18n.enforce_available_locales = false
+
 
 end

@@ -1,8 +1,0 @@
-<h1><%=@item.name%></h1>
-<ul>
-  <li><%=@item.price%>руб.</li>
-  <li><%= urls_to_links(urls_to_images( @item.description)) %></li>
-  <li>Вес: <%=@item.weight%>кг</li>
-</ul>
-<%= link_to "All Items", items_path %>
-<%= link_to "Edit Item", edit_item_path(@item) %>

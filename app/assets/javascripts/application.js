@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// Loads all Bootstrap javascripts
+//= require bootstrap
+//= require jquery.Jcrop
 //= require_tree .
+//= require_tree ./main
+
+

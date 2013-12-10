@@ -6,11 +6,9 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '1.3.8', :group => :development
 
-gem 'paperclip'
-gem 'carrierwave'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -49,6 +47,22 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
+
 gem 'devise'
+
+gem 'paperclip'
+gem 'carrierwave'
+#gem 'mini_magick'
+gem 'rmagick'
+gem 'jcrop-rails-v2'
+
+gem 'haml-rails'
+
+gem 'bootstrap-sass'
+
+gem 'simple_form', git: 'git://github.com/plataformatec/simple_form' #, github: 'zlx/simple_form_bootstrap3'
+#gem 'country_select'
+
+gem 'exception_notification'

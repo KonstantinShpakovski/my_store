@@ -1,0 +1,6 @@
+= f.input :name
+= f.input :description, as: :text, :input_html => { cols:30, rows: 8}
+= f.input :price, label: "Цена"
+= f.input :weight
+= f.fields_for :images do |i|
+  = i.file_field :image

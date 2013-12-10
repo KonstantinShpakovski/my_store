@@ -1,0 +1,10 @@
+%h1= @item.name
+%p= image_tag @item.images.first.image_url(:thumb) if (@item.images && @item.images.first)
+
+%ul
+  %li= "#{@item.price} руб."
+  %li= urls_to_links(urls_to_images( @item.description))
+  %li #{t("item.weight")}: #{@item.weight} кг.
+
+= link_to "All Items", items_path
+= link_to "Edit Item", edit_item_path(@item)

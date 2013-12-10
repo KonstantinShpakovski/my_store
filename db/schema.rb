@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127150443) do
+ActiveRecord::Schema.define(version: 20131209144250) do
 
   create_table "blog_posts", force: true do |t|
     t.string   "title"
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(version: 20131127150443) do
     t.datetime "updated_at"
   end
 
+  create_table "images", force: true do |t|
+    t.string   "image"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "crop_x",         default: 0
+    t.integer  "crop_y",         default: 0
+    t.integer  "crop_w",         default: 50
+    t.integer  "crop_h",         default: 50
+  end
+
   create_table "items", force: true do |t|
     t.float    "price"
     t.string   "name"
@@ -49,10 +61,16 @@ ActiveRecord::Schema.define(version: 20131127150443) do
   add_index "items", ["name"], name: "index_items_on_name"
   add_index "items", ["price"], name: "index_items_on_price"
 
+  create_table "items_orders", id: false, force: true do |t|
+    t.integer "item_id"
+    t.integer "order_id"
+  end
+
   create_table "orders", force: true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "total"
   end
 
   create_table "positions", force: true do |t|

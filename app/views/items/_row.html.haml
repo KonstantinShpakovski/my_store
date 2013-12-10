@@ -1,0 +1,16 @@
+%tr
+  %td= row.id
+  %td
+    = image_tag row.images.first.image_url(:thumb), width: '50px', height: '50px' if (row.images && row.images.first)
+    = link_to row.name, item_path(row)
+  %td= row.description
+  %td #{row.price} руб.
+  %td #{row.weight} кг.
+  %td
+    = link_to "Edit", controller: "items", action: "edit", id: row.id
+    = link_to "Delete", item_path(row), method: :delete, data: {confirm: "Are you sure?"}
+    = button_to "Edit", edit_item_path(row), method: :get
+    = button_to "Delete", item_path(row), method: :delete, data: {confirm: "Are you sure?"}
+  %td
+    = row.votes_count
+    = link_to "+", upvote_item_path(row)

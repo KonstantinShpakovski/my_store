@@ -1,0 +1,9 @@
+%h1 Edit item
+= simple_form_for @item do |f|
+  = render partial: "form", locals:{f: f}
+  %p
+    %br/
+    =	 image_tag @item.images.first.image_url(:thumb) if (@item.images && @item.images.first)
+  %p
+    = f.submit "Save Item"
+= button_to 'Cancel', :back, method: :get

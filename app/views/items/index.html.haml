@@ -1,0 +1,19 @@
+%h1 Items
+- if @items.empty?
+  %b No items in the store
+- else
+  =	 button_to "Show only expensive items", expensive_items_path, method: :get
+  =	 button_to "Show all items", items_path, method: :get
+  %table{:class=>"tables", :cellspacing=>"0", :cellpadding=>"0"}
+    %tr
+      %th Id
+      %th Name
+      %th Description
+      %th Price
+      %th Weight
+      %th Actions
+      %th Votes
+    = render partial: "row", collection: @items
+    = link_to "Add new item", new_item_path
+
+

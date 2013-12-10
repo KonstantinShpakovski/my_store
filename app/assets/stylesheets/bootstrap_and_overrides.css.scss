@@ -1,0 +1,21 @@
+@import "bootstrap";
+@import "bootstrap/theme";
+
+
+.form-group {
+  margin-bottom: 15px;
+  width: 500px;
+}
+body{
+  width: 99%;
+  margin: auto;
+}
+
+.navbar-nav > li > span {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #777777;
+  line-height: 20px;
+  display:block;
+}
+
